@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "I'm Back!"
+date:   2014-08-10 22:26:37
+categories: jekyll update
+---
+
+以前没玩这东西，现在发现还挺不错的，用git的方式管理，方便
+![My helpful screenshot]({{ site.url }}/assets/test.jpg)
+
+[jekyll-gh]: https://github.com/jekyll/jekyll
+[jekyll]:    http://jekyllrb.com
