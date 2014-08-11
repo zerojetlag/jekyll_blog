@@ -27,7 +27,7 @@ a:visited { color: #205caa; }
 .wrap:before,
 .wrap:after { content:""; display:table; }
 .wrap:after { clear: both; }
-.wrap {
+#disqus_thread .wrap {
   max-width: 800px;
   padding: 0 30px;
   margin: 0 auto;
