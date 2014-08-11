@@ -6,7 +6,7 @@ categories: jekyll update
 ---
 
 以前没玩这东西，现在发现还挺不错的，用git的方式管理，方便
-![My test]({{ site.url }}/assets/test.jpg)
+![My test]({{ site.baseurl }}/assets/test.jpg)
 
 [jekyll-gh]: https://github.com/jekyll/jekyll
 [jekyll]:    http://jekyllrb.com
