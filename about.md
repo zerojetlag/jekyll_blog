@@ -5,3 +5,5 @@ permalink: /about/
 ---
 
 A Ruby on Rails developer.
+
+City: Guangzhou
