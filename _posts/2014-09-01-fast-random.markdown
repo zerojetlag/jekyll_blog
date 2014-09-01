@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Fast random"
-date:   2014-08-12 22:26:37
+date:   2014-09-1 10:26:37
 categories: sql
 ---
 
