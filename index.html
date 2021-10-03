@@ -2,19 +2,67 @@
 layout: default
 ---
 
-<div class="home">
+ <div class="container">
+        <div id="p1">
+            <h1>辞职信</h1>
+            <div class="bd">
+                尊敬的洋洋领导: <img src="https://tse1-mm.cn.bing.net/th/id/R-C.40e185467852daacba667655339ca28c?rik=Uc5%2b0wKTa9JjCQ&riu=http%3a%2f%2fwx2.sinaimg.cn%2fbmiddle%2f705793b8gy1fvf5syv0ryj206o06o0ss.jpg&ehk=qLu9GkV2bclDQXMebXAsKZkb%2fCO%2f74xT00JqIsCM8XQ%3d&risl=&pid=ImgRaw&r=0" width="120"/>
+            </div>
 
-  <h1>Posts</h1>
+            <div class="ft">
+                <div class="btn-group">
+                    <button class="btn allow">同意</button>
+                    <button class="btn not-allow" id="not-allow">不同意</button>
+                </div>
+                <div class="fr">
+                    辞职人: <span class="name">小陈</span>
+                </div>
+            </div>
+        </div>
+        <div id="p2">
+            <h2 class="red">
+                老板大人, 臣告退了, 这一退可能</span>就是一辈子了。<br/>
+                !!!!敬礼!!!!
+            </h2>
+            <div class="ft">
+                <button class="btn fr exit">退出</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function(){
+            function $(selector) {
+                return document.querySelector(selector);
+            }
+            var $p1 = document.getElementById('p1');
+            var $p2 = document.getElementById('p2');
+            var $container = $('.container');
+            var $btn = $('#not-allow');
+            var isBlockClose = true;
 
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+            var maxX = $container.clientWidth - 1, maxY = $container.clientHeight - 1;
+            var originPos = $btn.getBoundingClientRect();
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+            $('.allow').addEventListener('click', function() {
+                $p1.style.display = 'none';
+                $p2.style.display = 'block';
+            });
+            $btn.addEventListener('mouseover', function() {
+                this.style.left = Math.floor(Math.random() * maxX - originPos.left) + 'px';
+                this.style.top = Math.floor(Math.random() * maxY - originPos.top) + 'px';
+                //console.log(this.style.left, this.style.top);
+            });
+            $('.exit').addEventListener('click', function() {
+                isBlockClose = false;
+                window.close();
+            });
+            window.addEventListener('beforeunload', function(e) {
+                if (isBlockClose) {
+                    alert("此路不通");
+                    e.returnValue = false;
+                    e.preventDefault();
+                    return "此路不通";
+                }
+            });
+        })();
+    </script>
